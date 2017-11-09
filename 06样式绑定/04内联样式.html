@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内联样式</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            activeColor: 'green',
+            fontSize: 30
+        }
+    })
+</script>
+
+</body>
+</html>

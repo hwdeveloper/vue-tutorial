@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试实例</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>{{ site }}</p>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'Google',
+            url: 'http://www.google.com'
+        }
+    })
+    // 调用 setter， vm.name 和 vm.url 也会被对应更新
+    vm.name = '你好';
+    vm.url=" http://www.runoob.com";
+    document.write('name: ' + vm.name);
+    document.write('<br>');
+    document.write('url: ' + vm.url);
+
+</script>
+
+</body>
+</html>
