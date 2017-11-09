@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>v-bind 指令</title>
+    <title>HTML 属性中的值应使用 v-bind 指令</title>
     <script src="../js/vue.min.js"></script>
 
     <style>
@@ -16,8 +16,10 @@
 
 
 <div id="app">
-    <label for="r1">修改颜色</label><input type="checkbox" v-model="class1" id="r1">
+    <label for="r1">修改颜色</label>
+    <input type="checkbox" v-model="class1" id="r1">
     <br><br>
+<!--    判断 class1 的值，如果为 true 使用 class1 类的样式，否则不使用该类：-->
     <div v-bind:class="{'class1': class1}">
         directiva v-bind:class
     </div>
