@@ -8,6 +8,7 @@
 <body>
 
 <div id="app">
+
     <p v-if="seen">认真学习</p>
 
     <template v-if="ok">
@@ -15,13 +16,14 @@
         <p>学的不仅是技术，更是梦想！</p>
         <p>学完之后，做项目</p>
     </template>
+
 </div>
 
 <script>
     new Vue({
         el: '#app',
         data: {
-            seen: true,
+            seen: false,
             ok: true
         }
     })

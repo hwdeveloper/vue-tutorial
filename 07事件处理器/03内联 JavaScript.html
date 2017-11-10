@@ -8,16 +8,19 @@
 <body>
 
 <div id="app">
-    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('hi')">{{name}}</button>
     <button v-on:click="say('what')">Say what</button>
 </div>
 
 <script>
     new Vue({
         el: '#app',
+        data:{
+            name:"aaa"
+        },
         methods: {
             say: function (message) {
-                alert(message)
+               this.name="bbbbbbbbbbbbb";
             }
         }
     })
