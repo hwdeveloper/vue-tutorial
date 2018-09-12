@@ -18,7 +18,6 @@
 1,当input输入数据的时候，因为v-model的原因，input把值给了parentMsg，parentMsg再给全局组件的message赋值。
 2,全局数据因为props，所以message接受数据，然后在template内部显示
 
-
 -->
 <script>
     // 注册
@@ -26,7 +25,7 @@
         // 声明 props
         props: ['message'],
         // 同样也可以在 vm 实例中像 “this.message” 这样使用
-        template: '<span>{{ message }}</span>'
+        template: '<h1>{{ message }}</h1>'
     })
     // 创建根实例
     new Vue({
