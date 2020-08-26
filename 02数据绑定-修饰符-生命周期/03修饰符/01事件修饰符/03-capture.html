@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.3.1.3 capture</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 阻止事件冒泡 -->
+        <div class="box" @click.capture="getBox()">
+            我是大盒子
+            <p class="red" @click="getLitle()">我是小盒子</p>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            methods: {
+                getBox() {
+                    console.log("我是大盒子")
+                },
+                getLitle() {
+                    console.log("我是小盒子")
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>

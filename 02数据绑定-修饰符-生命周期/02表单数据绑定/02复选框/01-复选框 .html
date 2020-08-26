@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.2.2 复选框</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>复选框</h3>
+        <input type="checkbox" v-model="check">
+        <label>{{ check }}</label>
+        <br>
+        <span>爱好：</span>
+        <input type="checkbox" v-model="hobby" value="唱歌">
+        唱歌
+        <input type="checkbox" v-model="hobby" value="跳舞">
+        跳舞
+        <h3>您选择的兴趣爱好是：{{ hobby }}</h3>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    check: '',
+                    hobby: []
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

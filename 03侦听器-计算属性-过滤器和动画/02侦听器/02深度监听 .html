@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.2.2 深度监听</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="json.aa">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    json: {
+                        aa: 10
+                    }
+                }
+            },
+            watch: {
+                json: {
+                    handler: function (val) {
+                        console.log(val);
+                        console.log(val.aa, 777)
+                    },
+                    deep: true
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

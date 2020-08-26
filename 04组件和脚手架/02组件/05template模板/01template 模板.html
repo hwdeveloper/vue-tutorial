@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.2.4.1 字面量 props</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+
+<body>
+
+    <div id="app">
+        <first></first>
+        <second></second>
+    </div>
+    <template id="first">
+        <div>
+            <h1>这是 first 组件</h1>
+        </div>
+    </template>
+    <template id="second">
+        <div>
+            <h1>这是 second 组件</h1>
+            42
+        </div>
+    </template>
+    <script>
+        var second = {
+            template: "#second"
+        }
+        var app = new Vue({
+            el: "#app",
+            components: {
+                first: {
+                    template: "#first"
+                },
+                second: second //key 和 value 的值相同时可以进行简写成 key 
+            }
+        })
+    </script>
+</body>
+
+</html>

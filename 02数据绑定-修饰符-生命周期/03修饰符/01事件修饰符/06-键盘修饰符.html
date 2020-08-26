@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.3.1.6 键盘修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 原生 JS 键盘修饰符 -->
+        <input type="text" @keydown.38="up" placeholder="键盘方向键向上">
+        <br />
+        <input type="text" @keydown.40="down" placeholder="键盘方向键向下">
+        <br />
+        <input type="text" @keydown.39="right" placeholder="键盘方向键向右">
+        <br />
+        <input type="text" @keydown.37="left" placeholder="键盘方向键向左">
+        <br />
+        <input type="text" @keydown.13="enter" placeholder="键盘回车键">
+        <br />
+        <!-- vue 键盘修饰符 -->
+        <input type="text" @keydown.up="up" placeholder="键盘方向键向上">
+        <br />
+        <input type="text" @keydown.down="down" placeholder="键盘方向键向下">
+        <br />
+        <input type="text" @keydown.right="right" placeholder="键盘方向键向右">
+        <br />
+        <input type="text" @keydown.left="left" placeholder="键盘方向键向左">
+        <br />
+        <input type="text" @keydown.enter="enter" placeholder="键盘回车键">
+        <br />
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            methods: {
+                up() {
+                    console.log("点击了 up")
+                },
+                down() {
+                    console.log("点击了 down")
+                },
+                right() {
+                    console.log("点击了 right")
+                },
+                left() {
+                    console.log("点击了 left")
+                },
+                enter() {
+                    console.log("点击了 enter")
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

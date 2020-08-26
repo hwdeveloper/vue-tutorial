@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>1.6.8.3 动态绑定style</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .red {
+        background: red;
+      }
+
+      .orange {
+        background: orange;
+      }
+
+      .yellow {
+        background: yellow;
+      }
+
+      .pink {
+        background: pink;
+      }
+
+      .blue {
+        background: blue;
+      }
+
+      .select {
+        background: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div :style="{background: color}">云想衣裳花想容</div>
+      <!-- 还有一种用法是在 style 内容里面给属性值赋一个变量 -->
+      <div :style="styleObj">春风拂槛露华浓</div>
+      <!-- 数组方式绑定 style -->
+      <div :style="[styleA,styleB]">锄禾日当午午</div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          color: "red",
+          styleObj: {
+            color: "pink",
+            fontSize: "50px",
+          },
+          styleA: {
+            border: "5px solid green",
+            fontSize: "30px",
+          },
+          styleB: {
+            transform: "rotate(20deg)",
+            color: "red",
+            marginTop: "150px",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

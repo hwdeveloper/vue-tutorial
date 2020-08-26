@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.2.4.2 多选</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>喜欢的歌曲：</span>
+        <select multiple v-model="songs">
+            <option value="" disabled>请选择</option>
+            <option v-for="item in options" :value="item.value">{{item.text}}</option>
+        </select>
+        <h3>您的选择是：{{ songs }}</h3>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    options: [{
+                        text: "沙漠骆驼",
+                        value: "A"
+                    }, {
+                        text: "可不可以",
+                        value: "B"
+                    }],
+                    songs: []
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.4.2 局部定义 </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 使用局部过滤器 -->
+        <p v-bind:id="name | toLower">{{ name }}</p>
+        <!-- 过滤器传参数 -->
+        <p>商品价格：{{ price | formatPrice(2) }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    name: "Zhange",
+                    price: 500
+                }
+            },
+            filters: {
+                toLower: function (str) {
+                    return str.toLowerCase();
+                },
+                formatPrice: function (price, n) {
+                    return
+                    price.toFixed(n)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

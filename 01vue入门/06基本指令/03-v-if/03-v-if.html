@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.5.3 v-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-if="show">努力学习</h1>
+        <h2 v-else>加油！</h2>
+        <h1 v-if="number<=1">数字是==1</h1>
+        <h1 v-else-if="number==2">数字是2</h1>
+        <h1 v-else>数字大于2</h1>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    show: false,
+                    number: 2
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

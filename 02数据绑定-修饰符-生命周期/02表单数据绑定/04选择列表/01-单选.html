@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.2.4.1 单选</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>选择列表</h3>
+        <div> <span>职业：</span> <select v-model="job">
+                <option value="" disabled>--请选择--</option>
+                <option value="WEB">WEB工程师</option>
+                <option value="PHP">PHP工程师</option>
+                <option value="JAVA">JAVA工程师</option>
+                <option value="Python">Python工程师</option>
+            </select>
+            <h3>您的职业是：{{ job }}</h3>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    job: "",
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

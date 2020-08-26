@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.5.3 过渡动画 </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+
+<body>
+
+    <div id="app">
+        <button @click="toggle()">切换</button>
+        <transition leave-active-class=" animate__animated animate__fadeOutDown"
+            enter-active-class="animate__animated animate__flipInX">
+            <div v-show="show">欢迎用户-小 U</div>
+        </transition>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    show: true
+                }
+            },
+            methods: {
+                toggle() {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

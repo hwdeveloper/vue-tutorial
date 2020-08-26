@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.6.8.2 动态绑定class</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .pink {
+            background: pink;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .select {
+            background: #ccc
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--动态绑定方式第一种直接写一个变量赋值-->
+        <h1 :class="classN"></h1>
+        <!--动态绑定方式第二种为 class 添加一个动态对象用 true 或者 false 去控制 -->
+        <h1 :class='classJson'></h1>
+        <!--动态绑定方式第三种为 class 添加一个[] 用三元运算符去控制要显示的样式 -->
+        <h1 :class='[1!=1?"pink":"orange"]'></h1> <!-- 原本存在样式 动态为它在后面拼接一个样式 记得在原有类名之后添加空格 -->
+        <h1 :class='"red "+className'></h1>
+        <ul>
+            <li v-for="(i,index) in arr" :class='[index%2==0 ?"red":"orange"]'>{{i}}</li>
+        </ul> <!-- 动态样式还可以进行判断，如果表达式的值为 true 表示使用指定的类名 -->
+        <ol>
+            <li v-for="(i,index) in arr" :class='{"select":index==num}'>{{i}}</li>
+        </ol>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                classN: 'pink',
+                classJson: {
+                    "red": true,
+                    "pink": true,
+                    "blue": true
+                },
+                className: 'pink',
+                arr: ['aa',
+                    'bb', 'cc', 'dd'
+                ],
+                num: 0
+            }
+        })
+    </script>
+</body>
+
+</html>

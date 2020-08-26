@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.6.5.3 v-if与v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="i in numarr">
+            <span v-for="j in numarr" v-if="i>=j">
+                {{ i }} * {{ j }} ={{ i * j }}&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                numarr: [1, 2, 3, 4, 5, 6, 7, 8]
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.2.4.2 props 验证</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+</head>
+
+<body>
+
+    <div id="app">
+        <mycomponent name="小华" :age="20" :phone="19911112222"></mycomponent>
+    </div>
+    <script>
+        Vue.component("mycomponent", {
+            template: `<div>姓名：{{ name }}<br />年龄：{{ age }}<br /> 手机号：{{ phone }}<br />
+            爱好：<span v-for="item of hobbys">{{ item }}</span> </div>`,
+            props: {
+                name: String,
+                age: {
+                    type: Number,
+                    validator: function (value) {
+                        return value >= 0 && value <= 110
+                    }
+                },
+                phone: {
+                    type: [String, Number],
+                    required: true
+                },
+                hobbys: {
+                    type: Array,
+                    default: function () {
+                        return [];
+                    }
+                }
+            }
+        })
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+
+</html>

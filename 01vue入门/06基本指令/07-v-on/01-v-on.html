@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.6.7 v-on</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ num }}
+        </br>
+        <button @click="num+=1">点击计数</button>
+        </br>
+        <button @click="say('小王')">{{msg}}</button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                num: 2,
+                msg: "你好"
+            },
+            methods: {
+                say: function (name) {
+                    this.msg = name + this.msg;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建Vue实例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- app 是挂载点 -->
+    <div id="app"></div>
+    <script>
+        //实例化Vue对象,需要传递一个选项对象        
+        new Vue({
+            //el:element需要获取的元素,一定是html中的根容器元素             
+            el: "#app"
+        })
+    </script>
+</body>
+
+</html>
